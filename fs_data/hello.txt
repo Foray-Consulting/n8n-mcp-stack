@@ -1,0 +1,20 @@
+# 👋  Welcome to the n8n-MCP demo stack
+
+You’re reading this through the **Filesystem MCP**.
+
+| Service | Internal URL | Host test port |
+|---------|--------------|----------------|
+| Fetch   | http://mcp_fetch:8001/sse | 8001 |
+| FS      | http://mcp_fs:8002/sse    | 8002 |
+| GitHub  | http://mcp_github:8003/sse| 8104 |
+
+**Quick tests in the n8n chat pane**
+
+```text
+Fetch https://n8n.io and give me a 1-sentence summary.
+List files in data/ and read data/hello.txt.
+List the latest commit messages for octocat/Hello-World.```
+
+Secrets live in .env-* files (ignored by Git).
+
+Happy automating! 🚀
