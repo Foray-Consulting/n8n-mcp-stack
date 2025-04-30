@@ -4,7 +4,7 @@ services:
     image: n8nio/n8n:latest
     container_name: n8n
     ports:
-      - "5678:5678"          # n8n UI
+      - "5678:5678" # n8n UI
     environment:
       - N8N_HOST=localhost
       - N8N_PORT=5678
@@ -36,6 +36,18 @@ services:
       - ./fs_data:/data
     ports:
       - "8002:8002"
+    networks: [n8nnet]
+  
+    # GitHub MCP server
+  mcp_github:
+    image: supercorp/supergateway:latest
+    env_file: [.env-github]
+    command: >
+      --stdio "npx -y @modelcontextprotocol/server-github"
+      --port 8003
+      --baseUrl http://mcp_github:8003
+    ports:
+      - "8104:8003"             # host 8104  ←→  container 8003
     networks: [n8nnet]
 
 networks:

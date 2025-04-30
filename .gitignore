@@ -2,3 +2,4 @@ n8n_data/
 fs_data/
 .DS_Store
 *.log
+.env*
